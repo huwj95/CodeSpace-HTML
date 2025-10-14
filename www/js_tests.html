@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Testing</title>
+</head>
+<body>
+<form>
+    <label for="input_1">Big Number
+    </label>
+    <input type="number" id="input_1">
+    <label for="input_2">Small Number</label>
+    <input type="number" id="input_2">
+
+</form>
+<button id="submit">Submit</button>
+<br>
+<h1 id="output">Do a division</h1>
+<h1 id="order_output">Are these numbers in order?</h1>
+<form>
+    <label for="input_3">
+        First Number
+    </label>
+    <input type="number" id="input_3">
+    <label for="input_4">
+        Second Number
+    </label>
+    <input type="number" id="input_4">
+    <label for="input_5">
+        Third Number
+    </label>
+    <input type="number" id="input_5">
+</form>
+<button id="submit_order">Submit</button>
+<script>
+
+    let bigNumber;
+    let smallNumber;
+    let result;
+    let remainder;
+    //run the below function when the button is clicked
+    document.getElementById("submit").addEventListener("click", myFunction);
+
+   function myFunction(){
+        //get input numbers from the form
+        bigNumber = document.getElementById('input_1').value;
+        smallNumber = document.getElementById('input_2').value;
+        //check for 2 numbers
+       if ( !bigNumber || !smallNumber ) {
+           document.getElementById('output').innerHTML = 'You must input 2 numbers';
+           return;
+       }
+        //calculate the division
+        result = bigNumber / smallNumber;
+        remainder = bigNumber % smallNumber;
+        document.getElementById('output').innerHTML = `${bigNumber} divided by ${smallNumber} is ${result} or ${Math.floor(result)} remainder ${remainder}`;
+        //return the result to the html
+        //document.getElementById('output').innerHTML = 'You clicked the button';
+
+    }
+
+    //switch statements exercise
+    document.getElementById("submit_order").addEventListener("click", myFunction2);
+
+    // using an object to store the inputs - the numbers will always be updated before the object is used
+    let inputs = {a: 0, b: 0, c: 0};
+
+    function myFunction2(){
+        // set up a string to put into the h1 tag
+        let returnString = '';
+        //set the inputs to the user's chosen numbers, tell the script that they are numbers (so as not to compare them alphabetically)
+        inputs.a = Number(document.getElementById('input_3').value);
+        inputs.b = Number(document.getElementById('input_4').value);
+        inputs.c = Number(document.getElementById('input_5').value);
+            //test for ascending order
+             if(inputs.a < inputs.b && inputs.b < inputs.c) {
+               returnString = 'Your numbers are in ascending order';
+           }
+             //test for descending order
+            else if  (inputs.a > inputs.b && inputs.b > inputs.c) {
+               returnString = 'Your numbers are in descending order';
+           }
+            //default response
+            else {
+                returnString = `Your numbers are neither in ascending or descending order. They are ${inputs.a}, ${inputs.b} and ${inputs.c}.`;
+           }
+        //return the appropriate response to the h1 tag
+       document.getElementById('order_output').innerHTML = returnString;
+    }
+</script>
+<br><br>
+<h1 id="factorial">Calculate a factorial</h1>
+<form>
+    <label for="input_6"></label>
+    <input type="number" id="input_6">
+</form>
+<button id="submit_factorial">Submit</button>
+<script>
+    //get user input
+    let factorialInput = document.getElementById('input_6');
+    //factorial function:
+    function factorialFunction(a) {
+        a = Number(factorialInput.value);
+        let result = 1;
+        //check input is positive integer
+        if (a > 0 && typeof a === 'number') {
+
+            for (let i = 1; i <= a; i++) {
+                result = result * i;
+            }
+        }
+        else result = 'Input must be a positive integer';
+        document.getElementById('factorial').innerHTML = result;
+    }
+    //listen for a click on the submit button
+    document.getElementById('submit_factorial').addEventListener("click", factorialFunction);
+
+</script>
+
+<h1 >Is it prime?</h1>
+<form>
+    <label for="input_7"></label>
+    <input type="number" id="input_7">
+</form>
+<button id="submit_prime" onclick="primeChecker()">Submit</button>
+<h1 id="prime">maybe</h1>
+<script>
+    function primeChecker() {
+        let primeInput = document.getElementById('input_7');
+            let a = Number(primeInput.value);
+            let isNot = ''
+
+            function finishStatement() {
+                let returnString = `${a} is ${isNot}a prime number`;
+                document.getElementById('prime').innerHTML = returnString;
+            }
+            for (let i = 2; i < a; i++) {
+                let c = a % i;
+                if (c == 0) {
+                    isNot = 'NOT '
+                    finishStatement();
+                    return;
+                }
+            }
+            finishStatement();
+    }
+</script>
+
+</body>
+</html>
