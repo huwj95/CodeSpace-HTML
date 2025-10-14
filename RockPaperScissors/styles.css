@@ -1,0 +1,21 @@
+.userChoice {
+    transition: 0.5s;
+
+}
+
+.userChoice:hover{
+    background-color: lightgray;
+    color: black;
+    filter: invert(0);
+}
+
+.userChoice:active {
+    background-color: lightskyblue;
+    color: black;
+    transition: 0.1s;
+}
+
+.img-thumbnail{
+    mix-blend-mode: multiply;
+}
+
