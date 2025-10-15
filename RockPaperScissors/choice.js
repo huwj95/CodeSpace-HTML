@@ -8,6 +8,17 @@ let results = {
     rounds: 0
 };
 
+function resetScoreboard() {
+    results = {
+        computer: 0,
+        user: 0,
+        rounds: 0
+    };
+    document.getElementById('user').innerHTML = results.user;
+    document.getElementById('computer').innerHTML = results.computer;
+    document.getElementById('rounds').innerHTML = results.rounds;
+}
+
 function updateScore(result) {
     if (result == 'You win'){
         results.user = results.user + 1;
@@ -15,6 +26,11 @@ function updateScore(result) {
         results.computer += 1;
     }
     results.rounds += 1;
+    setTimeout( () =>{
+        document.getElementById('user').innerHTML = results.user;
+        document.getElementById('computer').innerHTML = results.computer;
+        document.getElementById('rounds').innerHTML = results.rounds;
+     } , 1600);
 }
 
 function choice(userInput) {
@@ -59,6 +75,7 @@ function choice(userInput) {
         1000)
     setTimeout(()=>{executor.innerHTML +=`<br> ${result}`}, 1500);
     updateScore(result);
+
     
     return;
 }

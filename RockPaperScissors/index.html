@@ -35,19 +35,33 @@
         <div class='col-12' id="executor"></div>
     </div>
     <div class="row">
-        <div class='col-12' id="scoreboard"></div>
+        <div class='col-12' id="scoreboard">
+            <h1 class="display-1 text-center">Scoreboard</h1>
+        </div>
         <div class="col-6" >
+            <h1 class="display-2 text-center text-white">User:</h1>
+            <br>
             <h1 class="display-2 text-center text-white" id="user"></h1>
         </div>
-        <div class="col-6" id="computer"></div>
-    </div>
+        <div class="col-6"</div>
+            <h1 class="display-2 text-center text-white">Computer:</h1>
+            <br>
+            <h1 class="display-2 text-center text-white" id="computer"></h1>
+        </div>
+        <div class="col-8">
+            <h1 class="display-2 text-center text-white">Rounds: </h1>
+            <h1 class="display-2 text-center text-white" id="rounds"></h1>
+        </div>
+        <div class="col-4" id="resetScoreboard" onclick="resetScoreboard()">
+            <h1 class="display-2 text-center text-white">Reset</h1>
+        </div>
 </div>
 
 <script src="./choice.js">
 
 </script>
 <script>
-    document.getElementById("user").innerHTML = 'boo ' + results.user;
+
 </script>
 
 </body>
