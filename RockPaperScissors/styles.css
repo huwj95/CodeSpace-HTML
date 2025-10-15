@@ -1,3 +1,24 @@
+.bbh-sans-hegarty-regular {
+    font-family: "BBH Sans Hegarty", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.trade-winds-regular {
+    font-family: "Trade Winds", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    font-family: roboto;
+    font-weight: 100;
+}
+
+.display-1{
+    font-family: "BBH Sans Hegarty", sans-serif;
+}
+
 .userChoice {
     transition: 0.5s;
 
@@ -19,3 +40,28 @@
     mix-blend-mode: multiply;
 }
 
+.score{
+    font-family: 'Seven Segment', sans-serif;
+}
+
+#executor{
+    height: 8rem;
+}
+
+#title{
+    background-color: darkslategray;
+    border-radius: 2rem;
+}
+
+#reset_btn{
+    background-color: darkred;
+    text-align: center;
+    line-height: 6rem;
+    border-radius: 3rem;
+    height: 6rem;
+    width: 6rem;
+    color: white;
+    font-weight: bold;
+    font-family: 'Seven Segment', sans-serif;
+    font-size: 2rem;
+}
